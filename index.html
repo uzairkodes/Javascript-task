@@ -31,7 +31,7 @@
         parentDiv.addEventListener(
           "click",
           () => {
-            console.log("Parent DIV (capturing phase)");
+            console.log("Parent");
           },
           true
         );
@@ -39,7 +39,7 @@
         childButton.addEventListener(
           "click",
           () => {
-            console.log("Child BUTTON (bubbling phase)");
+            console.log("Child");
           },
           false
         );
