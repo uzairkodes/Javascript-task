@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent {
+        padding: 20px;
+        background-color: lightblue;
+      }
+
+      #child {
+        padding: 10px;
+        background-color: lightcoral;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <button id="child">Click me!</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const parentDiv = document.getElementById("parent");
+        const childButton = document.getElementById("child");
+
+        parentDiv.addEventListener(
+          "click",
+          () => {
+            console.log("Parent DIV (capturing phase)");
+          },
+          true
+        );
+
+        childButton.addEventListener(
+          "click",
+          () => {
+            console.log("Child BUTTON (bubbling phase)");
+          },
+          false
+        );
+      });
+    </script>
+  </body>
+</html>
